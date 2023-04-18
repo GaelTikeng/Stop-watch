@@ -4,19 +4,13 @@
   margin: 0;
 }
 
-body {
-  /* background: #23549c; */
-  
-}
-
 .all {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  width: 20%;
+  min-width: 300px;
   margin: 100px;
   padding: 20px 0;
-  /* position: relative; */
   box-shadow: 0 4px 8px 0 #212427;
   border: 1px solid #9c9d9e;
 }
@@ -63,4 +57,13 @@ body {
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .all {
+    width: 90%;
+    min-width: 300px;
+    margin: 2rem auto;
+
+  }
 }
