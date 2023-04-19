@@ -12,59 +12,19 @@
     
     <div id="textarea">
       <div class="timer">
-        00 : 00 : 00 : 00
+        00 : 00 : 00 : 000
       </div>
     </div>
     <div class="btns">
       <button id="start">Start</button>
-      <button id="stop" onclick="stopButton()">Stop</button>
-      <button id="reset" onclick="resetButton()">Reset</button>
+      <button id="stop">Stop</button>
+      <button id="reset">Reset</button>
     </div>
   </div>
 </body>
 
-<script>
-  let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0]
-  let int = null
-  let timeRef = document.getElementsByClassName('timer')
-  let start = document.getElementById('start')
-  let stop = document.getElementById('stop')
-  let reset = document.getElementById('reset')
-
-  function displayTimer () {
-    milliseconds += 10
-    if (milliseconds == 1000) {
-      milliseconds = 0
-      seconds ++
-      if (seconds == 59) {
-        seconds = 0
-        minutes ++
-        if (minutes == 60) {
-          minutes = 0
-          hours ++
-        }
-      }
-    }
-  }
-
-  function startButton () {
-    if(int !== null) {
-      clearInterval(int)
-    }
-    int = setInterval(displayTimer, 10)
-  }
-  start.addEventListener("click", startButton)
-
-  function stopButton () {
-    clearInterval(int)
-  }
-
-  function resetButton () {
-    [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0]
-    timeRef.innerHTML = '00 : 00 : 00 : 000'
-  }
-
-
+<script src="stopwatch.js">
+  
 </script>
 
 </html>
